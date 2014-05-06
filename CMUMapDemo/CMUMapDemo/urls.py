@@ -10,4 +10,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'routeFinder.views.index', name="index"),
+    url(r'^demo2/', 'routeFinder.views.demo2', name="demo2"),
 )

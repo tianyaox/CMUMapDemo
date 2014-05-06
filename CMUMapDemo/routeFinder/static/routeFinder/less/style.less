@@ -1,23 +1,244 @@
-@import (reference) "bootstrap.min.css";
+@import "../css/reset.css";
+@import  "bootstrap.less";
+@nav-border:#ccc;
+@brand-color: black;
+@input-shadow: #bbb;
+@submit-shadow: #aaa;
+
+
+.my-group{
+	.input-group;
+
+}
+.my-group-btn{
+	// .input-group-btn;
+	cursor: pointer;
+	&:hover{
+		background: @input-shadow;
+	}
+}
+.my-control{
+	.form-control;
+}
+
+.my-btn{
+	.btn;
+
+	.btn-default
+}
 
 .bodyContainer {
     background: url("/static/routeFinder/img/googleMapSample.jpg");
 }
-
-
-header>*{
-	display: inline-block;
-}
-
-.pick-box{
+.white-box{
+	background: white;
+	box-shadow: 0 0 10px #aaa;
+	-moz-box-shadow: 0 0 10px #aaa;
+	-webkit-box-shadow: 0 0 10px #aaa;
+	padding: 10px;
 	position: relative;
-	display: inline-block;
 }
-.pick-box>a{
-	// float: right;
-	position: absolute;
-	right: 10px;
-	padding: 2px;
-	text-decoration: none;
-	background-color: gray;
+
+header{
+	.left-nav{
+		.white-box;
+	}
+	a{
+		text-decoration: none !important;
+	}
+	overflow: scroll;
+	width:100%;
+	
+	.sign-group{
+		.white-box;
+		// width: 20%;
+		padding: 10px;
+		background: white;
+		float:right;
+		cursor: pointer;
+		>*{
+			display: block;
+			margin:0px;
+		}
+		span{
+			text-align: center;
+			margin-bottom: 5px;
+		}
+	}
+
 }
+.left-nav{
+	float:left;
+	width: 78%;
+	overflow: hidden;
+	>*{
+		float:left;
+	}
+	.brand{
+		width:12%;
+		padding: 5px;
+		color: black;
+		&:hover{
+			color: lighten(@brand-color, 30%)
+
+		}
+		
+	}
+	.search-group{
+		width: 88%;
+		// .box-pair{
+		// 	overflow: hidden;
+		// }
+	}
+}
+.find-submit{
+	float:left;
+	border-radius: 0px;
+	border: 0px;
+	box-shadow: 0 0 3px @submit-shadow;
+
+}
+.pick-box.my-group{
+
+	width:40%;
+	float:left;
+	margin-right:10px;
+	>*{
+		float:left;
+	}	
+	span.my-group-btn{
+		top:0px;
+		// position: absolute;
+		padding: 10px;
+		float: left;
+		overflow: hidden;
+		width: 34px;	
+		margin: 0;
+		height: 32px;
+		box-shadow: 0 0 3px @input-shadow;
+
+	}
+	a.my-btn {
+		width: 100%;
+		padding: 0px;
+		padding-top:7px;
+		border-bottom-left-radius: 0px;
+		border-top-left-radius: 0px;
+		border-left: 0px;
+	    border-radius: 0px;
+	    border: 0px;
+	    /* box-shadow: 0 0 3px #ddd; */
+
+	}
+	.my-control{
+		// width:100%;
+		float: left;
+		height:32px;
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		border: 0px;
+	    box-shadow: 0 0 3px @input-shadow;
+	    box-shadow: navajowhite;
+	    border-radius: 0px;
+	}
+}
+
+section.wrapper{
+	position: fixed;
+	top:0px;
+	width: 100%;
+	overflow: none;
+	padding: 10px;
+}
+nav.floor-nav{
+	.white-box;
+	padding: 0px;
+	position: fixed;
+	right:8%;
+	bottom: 50px;
+	ul{
+		li{
+			border-top: @nav-border 1px solid;
+			// border-top: 0px;
+			a{
+				text-decoration: none;
+				display:block;
+				padding: 10px;
+				color:black;
+				background: white;
+				&:hover{
+					background: @nav-border;
+				}
+			}
+			
+			
+		}
+		li:first-child{
+			border-top:0px;
+		}
+	}
+}
+
+@media (max-width: 850px) {
+  .brand{
+  	display: none;
+  }
+  .left-nav{
+  	.search-group{
+  		width: 100%;
+		}
+	}
+
+}
+
+@media (max-width: 500px) {
+  	.left-nav{
+  		width:100%;
+  		.search-group{
+	  		width: 100%;
+	  		>*{
+	  			float: left;
+	  		}
+	  		overflow: hidden;
+	  		.box-pair{
+	  			width: 85%;
+	  			.pick-box{
+	  				margin: 0;
+	  				display: block;
+	  				width: 100%;
+	  			}
+	  		}
+	  		span.my-group-btn {
+				box-shadow: none;
+	  		}
+	  		.my-btn.find-submit{
+				width: 15%;
+				box-shadow: none;
+				position: relative;
+				bottom: 15px;
+	  		}
+	  		.my-control{
+				box-shadow: none;
+
+
+	  		}
+
+		}
+	}
+	.pick-box.my-group:first-child{
+		.my-control, .my-group-btn{
+			border-bottom: 1px solid #ddd;
+		}
+	}
+	div.sign-group{
+		position: fixed;
+		left:5%;
+		bottom: 10%;
+
+	}
+
+}
+
+
+
+

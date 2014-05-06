@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Demo2</title>
+		<link rel="stylesheet" type="text/less" href="/static/routeFinder/less/style.less">
+
+		<link rel="stylesheet" type="text/less" href="/static/routeFinder/css/bootstrap.min.css">
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+
+	</head>
+
+	<body class="bodyContainer">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+
+	          <a class="navbar-brand" href="#">CMU Route</a>
+
+	        </div>
+
+	        <div class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-left" role="form">
+	            
+	            <div class="form-group">
+	              <input type="text" placeholder="From" class="form-control">
+	              <!-- <div class="pseudo-input" contenteditable="true">Resizes to my content!</div> -->
+	            </div>
+	            <div class="form-group">
+	              <input type="text" placeholder="To" class="form-control">
+	            </div>
+	            <button type="submit" class="btn btn-default">Find</button>
+	          </form>
+		      <ul class="nav navbar-nav nav-right pull-right demo-signin">
+		      	<li><a href="#">Sign in</a></li>
+		      </ul>
+
+	        </div><!--/.navbar-collapse -->
+	      </div>
+
+	    </div>
+		<nav class="floor-nav">
+			<ul>
+				<li><a href="#">5</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">0</a></li>
+			</ul>
+		</nav>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script>
+	var input = document.getElementsByTagName('input')[0];
+	var input1 = document.getElementsByTagName('input')[1];
+
+	input.onkeypress = input.onkeydown = function() {
+    	this.size = ( this.value.length > 20 ) ? (this.value.length) : 20;
+	};
+	input1.onkeypress = input1.onkeydown = function() {
+    	this.size = ( this.value.length > 20 ) ? this.value.length : 20;
+	};
+	</script>
+</html>

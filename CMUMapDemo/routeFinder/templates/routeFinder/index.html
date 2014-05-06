@@ -1,43 +1,74 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset='UTF-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Router Finder</title>
-		<link rel="stylesheet" type="text/css" href="/static/routeFinder/css/reset.css">
 
 		<link rel="stylesheet" type="text/less" href="/static/routeFinder/less/style.less">
-		
+		<link rel="stylesheet" type="text/less" href="/static/routeFinder/css/bootstrap.min.css">
 		<!-- Less -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
 	</head>
 
 	<body class="bodyContainer">
-		<header>
-			<a class="brand" href="#">CMU Route</a>
-			<div>
-				<form>
-					<div class="pick-box">
-						<span>
-							<a href="#">pick</a>
-						</span>
-						<input type="text" name="from" placeholder="From..">
-					</div>
-					<div class="pick-box">
-						<span>
-							<a href="#">pick</a>
-						</span>
-						<input type="text" name="from" placeholder="From..">
-					</div>
-					<a>Find</a>
-				</form>
-			</div>
-			<div>
-				<a href="#">Sign up</a>
-				<a href="#">Sign in</a>
-			</div>
+		<section class="wrapper">
+			<header>
+				<nav class="left-nav">
+					<a class="brand" href="#">CMU Route</a>
+					<div class="search-group">
+						<form>
+							<section class="box-pair">
+								<div class="pick-box my-group">
+									<input class ="my-control" type="text" name="from" placeholder="From">
+									<span class="my-group-btn glyphicon glyphicon-map-marker">
+									</span>
+								</div>
+								<div class="pick-box my-group">
+									<input class ="my-control" type="text" name="from" placeholder="To">
+									<span class="my-group-btn glyphicon glyphicon-map-marker">
+									</span>
+								</div>
+							</section>
+							
 
-		</header>
+							<a class="my-btn find-submit" href="#">Find</a>
+						</form>
+					</div>
+				</nav>
+				<div class="sign-group">
+					<span class="glyphicon glyphicon-user" href="#"></span>
+					<p>sign in</p>
+				</div>
+
+			</header>
+		</section>
+
+		<nav class="floor-nav">
+			<ul>
+				<li><a href="#">5</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">0</a></li>
+			</ul>
+		</nav>
 	</body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".my-control").width($(".pick-box").width()-$(".my-group-btn").width()-45+"px");
+		console.log($(".my-control").width());
+	});
+	window.onresize = function(){
+		$(".my-control").width($(".pick-box").width()-$(".my-group-btn").width()-45+"px");
+		console.log($(".my-control").width());
+
+		if ($(window).width() <= 500){	
+		// do something here
+
+		}	
+	};
+	</script>
 </html>
